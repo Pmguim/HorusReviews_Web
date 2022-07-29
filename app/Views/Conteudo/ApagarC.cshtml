@@ -1,0 +1,29 @@
+﻿@model ComentarioModel
+@{
+    ViewData["Title"] = "Apagar comentário";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+    @TempData["MensagemSucesso"]
+</div>    
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<div>
+    <h3>Realmente deseja apagar o comentário selecionado?</h3>
+</div>
+
+    <a class="btn btn-danger btn-block" asp-controller="Conteudo" asp-action="Apagar"  asp-route-id="CodComent">Sim, delete o comentário</a>
+
+    <a class="btn btn-primary btn-block" asp-controller="Conteudo" asp-action="DStrangeLogado">Não, mantenha o comentário</a>

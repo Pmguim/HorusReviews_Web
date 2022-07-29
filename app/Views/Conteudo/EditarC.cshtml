@@ -1,0 +1,54 @@
+﻿@model ComentarioModel
+@{
+    ViewData["Title"] = "Editar comentário";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+    @TempData["MensagemSucesso"]
+</div>    
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<h3>Editar comentário: </h3>
+
+<label for="exampleInputEmail1">Seu comentário, publicado anteriormente, 
+    será editado conforme o que for digitado aqui dentro.</label>
+
+<div class="container-fluid">
+    <div class="row">
+        <br />            
+        <div class="col">            
+        </div>
+    </div>
+</div>
+
+<form asp-controller="Conteudo" asp-action="Alterar" method="post">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--Caixa de comentário: -->
+            <div class="col">
+                <input asp-for="TextoComentario" type="text" class="comentDest2" placeholder="Digite seu comentário aqui" maxlength="950" required />
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <!--Botão de enviar-->
+    <div class="textFilmS">
+        <a asp-area="" asp-controller="Conteudo" asp-action="DStrangeLogado">
+            <input type="submit" class="btn btn-primary btn-block" value="Enviar" />
+        </a>
+    </div>
+</form>

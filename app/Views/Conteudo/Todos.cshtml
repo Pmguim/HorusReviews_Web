@@ -1,0 +1,45 @@
+﻿@model List<ConteudoModel>
+
+@{
+    ViewData["Title"] = "Filmes, séries e animes";
+    Layout = "~/Views/SHARED/_Layout.cshtml";
+}
+
+<div class="textFilmS">
+    <h3>Pesquise os conteúdos do nosso site!</h3>
+    <label for="exampleInputEmail1">Insira o nome do diretor, categoria(Filme, Série, Anime; Ação, Drama etc.) ou Nome da produção na caixa de pesquisa!</label>
+    <hr />
+</div>
+
+<div class="textFilmS">
+        <table class="table" id="table-conteudo">
+            <thead class="thead-dark">
+                <tr>                    
+                    <th scope="col">Conteúdo Nome</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Sinopse</th>
+                    <th scope="col">Diretor</th>
+                    <th scope="col">Data de lançamento</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @if (Model != null && Model.Any())
+                {
+                    foreach (ConteudoModel conteudo in Model)
+                    {
+                        <tr>
+                          <td>@conteudo.ContNome</td>
+                          <td>@conteudo.Categoria</td>
+                          <td>@conteudo.Sinopse</td>
+                          <td>@conteudo.Diretor</td>
+                          <td>@conteudo.DataLanc</td>              
+                        </tr>            
+
+                    }
+                }
+            </tbody>
+        </table>
+        <br />
+</div>

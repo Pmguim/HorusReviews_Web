@@ -1,0 +1,124 @@
+﻿@model List<ComentarioModel>
+@{
+    ViewBag.Teste = "Doutor Estranho no Multiverso da Loucura";
+    ViewData["Title"] = "Conteudo";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+    @TempData["MensagemSucesso"]
+</div>    
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<div>
+    <div class="textFilmS">
+        <h2>@ViewBag.Teste</h2>
+        <h5>de Sam Raimi</h5>
+        <br />
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col textFilmS">
+                <img src="~/css/IMG/doctorStrange_Multiverse.png" alt="Pôster Doutor Estranho no Multiverso da Loucura" width="200px" />
+            </div>
+
+            <div class="col marginBot">
+                <h3>Sinopse</h3>
+                <h5>
+                    Em Doutor Estranho no Multiverso da Loucura, após derrotar Dormammu e enfrentar Thanos nos eventos de Vingadores: Ultimato, <br />
+                    o Mago Supremo, Stephen Strange (Benedict Cumberbatch), e seu parceiro Wong (Benedict Wong), continuam suas pesquisas sobre
+                    a Joia do Tempo. Mas um velho amigo que virou inimigo coloca um ponto final nos seus planos e faz com que Strange desencadeie
+                    um mal indescritível, o obrigando a enfrentar uma nova e poderosa ameaça.
+                </h5>
+            </div>            
+            <hr />
+            </div>
+            <div class="margem">
+            </div>
+
+            <div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                <h4>Comentários:</h4>
+                </div>                
+
+                <div class="col">
+                    <a asp-area="" asp-controller="Conteudo" asp-action="Comentario">
+                    <input type="button" class="cadBut btn btn-secondary" value="Adicionar um comentário" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="margem"></div>
+
+            <hr />
+
+            </div>
+
+            <table class="table textFilmS" id="table-comentario">
+                <thead>
+                    <tr>
+                        <th scope="col">CodComent</th>
+                        <th scope="col">Usuário</th>
+                        <th scope="col">Comentário</th>
+                        <th scope="col">Editar/Apagar</th>
+                    </tr>
+                </thead>
+
+            <!--LISTANDO COMENTÁRIOS DO BANCO:-->            
+           @if (Model != null && Model.Any())
+                    {
+                        foreach (ComentarioModel comentario in Model)
+                        {
+                            <!--<div class="container-fluid">
+                                <div class="row">
+                                    <div>
+                                    <i class="fa-solid fa-user"></i>
+                                    <h4>(a)comentario.UserName</h4>
+                                    </div>
+
+                                    <div class="comentDest2">
+                                        <h5>(a)comentario.TextoComentario</h5>                                        
+                                    </div>
+                                    <p><i>Enviado no dia: (a)comentario.DataPost</i></p>
+                                </div>
+                                <a role="button" class="btn btn-primary" asp-route-id="(a)comentario.UserName" asp-controller="Conteudo" asp-action="EditarC">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="(a)comentario.UserName" asp-controller="Conteudo" asp-action="ApagarC">Apagar</a>
+                            </div>
+                            <hr />
+                            <br />-->
+                              <tbody class="textFilmS">
+                                <tr>
+                                  <td>@comentario.CodComent</td>
+                                  <td>@comentario.UserName</td>
+                                  <td>@comentario.TextoComentario</td>                                  
+                                  <td class="textFilmS1"><a role="button" class="btn btn-primary" asp-route-id="@comentario.CodComent" asp-controller="Conteudo" asp-action="EditarC">Editar</a></td>
+                                  <td class="textFilmS1"><a role="button" class="btn btn-danger" asp-route-id="@comentario.CodComent" asp-controller="Conteudo" asp-action="ApagarC">Apagar</a></td>
+                                </tr>
+                              </tbody>
+                            
+                        }
+                    }
+                    else {
+                        <tr class="odd"><td valign="top" colspan="5">Nenhum comentário encontrado.</td></tr>
+                    }
+            </table>
+
+            <div class="col"></div>
+
+        </div>
+    </div>
+    </div>

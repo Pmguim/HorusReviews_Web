@@ -1,0 +1,149 @@
+﻿@model UsuarioModel
+@{
+    ViewBag.Title = "Login-Cadastro";
+    Layout = "~/Views/SHARED/_Layout.cshtml";
+}
+
+    <style>
+        .spaaco {
+            margin-top: 150px;
+        }
+    </style>
+
+    <script>
+        $('.alert').alert()
+    </script>
+
+    <div class="spaaco"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+        @if (TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                    <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert alert-primary" aria-label="Close">X</button>
+                    @TempData["MensagemSucesso"]
+                </div>
+        }
+            
+            @if (TempData["MensagemErro"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert alert-primary" aria-label="Close">X</button>
+                    @TempData["MensagemErro"]
+                </div>
+            }
+
+            <!--COLUNA DE CADASTRO:-->
+            <form asp-controller="Usuario" asp-action="Cadastro" method="post">
+                <div>
+                    <h4 class="textFilmS">Ainda não é cadastrado? Faça hoje mesmo: <br /></h4>
+
+                    <!--Caixa nome de usuário-->
+                    <div class="form-group">                            
+                            <label for="exampleInputEmail1">Seu NomeDeUsuario:</label>                                   
+                            <input type="text" class="form-control" id="exampleInputEmail1" asp-for="UserName" aria-describedby="emailHelp" placeholder="Silva_10" maxlength="15" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.UserName)</p>
+                        </div>                   
+
+                        <!--Caixa nome-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Seu nome:</label>                            
+                            <input type="text" class="form-control" id="exampleInputEmail1" asp-for="Nome" aria-describedby="emailHelp" placeholder="Geraldo Silva Neto" maxlength="50" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.Nome)</p>
+                        </div>
+
+                        <!--Caixa data de nascimento-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sua Data de Nascimento:</label>                            
+                            <input type="date" class="form-control" id="exampleInputEmail1" asp-for="DataNasc" aria-describedby="emailHelp" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.DataNasc)</p>
+                        </div>
+
+                        <!--Caixa E-mail-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Seu endereço de email</label>                            
+                            <input type="email" class="form-control" id="exampleInputEmail1" asp-for="Email" aria-describedby="emailHelp" placeholder="emailgenerico@outlook.com" maxlength="55" required >
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.Email)</p>
+                        </div>
+
+                        <!--Caixa senha-->
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Sua Senha</label>                            
+                            <input type="password" class="form-control" asp-for="Senha" id="exampleInputPassword1" placeholder="admin1234" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.Senha)</p>
+                            <br />
+                        </div>
+
+                        <div class="textFilmS">
+                            <a asp-area="" asp-controller="Usuario" asp-action="Login">
+                                <input type="submit" class="btn btn-primary btn-block" value="Enviar">
+                                <br />
+                            </a>
+                            <div>
+                                <a class="cadBut btn btn-secondary btn-sm" asp-action="Index" asp-controller="Home" role="button">Voltar</a>
+                            </div>
+                        </div>                         
+                </div>
+            </form>
+
+            <div class="textFilmS">
+                <br />
+                <h5>
+                    Já tem cadastro? Entre com seu
+                    <a asp-action="Login" asp-controller="Usuario">
+                        login!
+                    </a>
+                </h5>
+            </div>
+
+                @Html.Raw(ViewBag.msg)
+        </div>
+
+    </div>
+
+    <div class="spaaco"></div>
+                    <!--<div>
+                        <p>Nome de usuário:</p>
+                        (a)Html.ValidationMessageFor(x => x.UserName)
+                        <input type="text" asp-for="UserName" placeholder="Silva_10" class="cadUName" maxlength="15"  />
+                        <input type="text" placeholder="Silva_10" class="cadUName" maxlength="15"  />
+                    </div>
+                    
+                    <div>
+                        <br /><p>Nome:</p>
+                        (a)Html.ValidationMessageFor(x => x.Nome)
+                        <input type="text" asp-for="Nome" placeholder="Geraldo Silva Neto" class="cadName" maxlength="50" />
+                        <input type="text" placeholder="Geraldo Silva Neto" class="cadName" />
+                    </div>
+                
+                    <div>
+                        <br /><p>Data de Nascimento:</p>
+                        (a)Html.ValidationMessageFor(x => x.DataNasc)
+                       <input type="date" asp-for="DataNasc" class="cadDate" />
+                        <input type="date" class="cadDate" />
+                    </div>
+
+                    <div>
+                        <br /><p>Endereço de E-mail:</p>
+                        (a)Html.ValidationMessageFor(x => x.Email)
+                        <input type="email" asp-for="Email" class="cadEmail" placeholder="emailgenerico@serviço.com" maxlength="55" />
+                        <input type="email" class="cadEmail" placeholder="emailgenerico@serviço.com" maxlength="55" />
+                        
+                    </div>
+
+                    <div>
+                        <br /><p>Senha:</p>
+                        (a)Html.ValidationMessageFor(x => x.Senha)
+                        <input type="password" asp-for="Senha" class="cadSenha" placeholder="admin1234" maxlength="12" /><br />
+                        <input type="password" class="cadSenha" placeholder="admin1234" maxlength="12" /><br />
+                    </div>
+
+                    <div>
+                        <p class="margem"></p>
+                        <a class="nav-link link" asp-area="" asp-controller="Usuario" asp-action="Login">
+                            <input type="submit" class="cadBut btn btn-secondary" value="Acessar" />
+                        </a>
+                    </div>-->
+

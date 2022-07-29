@@ -1,0 +1,124 @@
+﻿@{
+    ViewData["Title"] = "Filmes";
+    Layout = "~/Views/SHARED/_Layout.cshtml";
+}
+
+                <!--LINHA 1:-->
+<div class="container-fluid textFilmS">
+    <div class="row">
+
+        <div class="col">
+            <img src="~/css/IMG/TheBatmanPoster.png" alt="Pôster de The Batman (2022)" width="150"/>
+            <h4>The Batman</h4>
+            <h5>De Matt Reeves</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/AdaoNegroPoster.png" alt="Pôster de Adão Negro (2023)" width="150" />
+            <h4>Adão Negro</h4>
+            <h5>De Jaume Collet-Serra</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/theFlashPoster.png" alt="Pôster de The Flash (2023)" width="150" />
+            <h4>The Flash</h4>
+            <h5>De Andy Muschietti</h5>
+        </div>
+
+        <!--Thor: Amor e Trovão-->
+        <div class="col">
+            <img src="~/css/IMG/ThorAmorTrovaoPoster.png" alt="Pôster de Thor: Amor e Trovão (2022)" width="150" />
+            <h4>Thor:<br />Amor e Trovão</h4>
+            <h5>De Taika Waititi</h5>
+        </div>       
+    </div>
+</div>
+
+<hr />
+<br />
+
+                <!--LINHA 2:-->
+<div class="container-fluid textFilmS">
+    <div class="row">
+
+        <!--Jurassic World: Domínio-->
+         <div class="col">
+            <img src="~/css/IMG/JWorldPoster.jpg" alt="Pôster de Jurassic World: Domínio (2022)" width="150" />
+            <h4>Jurassic World: Domínio</h4>
+            <h5>De Colin Trevorrow</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/LongeDeCasaPoster.png" alt="Pôster de Homem-Aranha: Sem Volta pra Casa (2021)" width="150" />
+            <h4>Homem-Aranha:<br />Sem Volta pra Casa</h4>
+            <h5>De Jon Watts</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/TopGunPoster.png" alt="Pôster de Top Gun: Maverick (2022)" width="150" />
+            <h4>Top Gun: Maverick</h4>
+            <h5>De Joseph Kosinski</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/SonicPoster.png" alt="Pôster de Sonic 2: O Filme (2022)" width="150" />
+            <h4>Sonic 2: O Filme</h4>
+            <h5>De Jeff Fowler</h5>
+        </div>        
+
+    </div>
+</div>
+
+<hr />
+<br />
+
+                <!--LINHA 3:-->
+<div class="container-fluid textFilmS">
+    <div class="row">
+
+        <!--Lightyear-->
+        <div class="col">
+            <img src="~/css/IMG/ligthyearPoster.png" alt="Pôster de Lightyear (2022)" width="150" />
+            <h4>Lightyear</h4>
+            <h5>De Angus MacLane</h5>
+        </div>
+
+         <!--Avatar 2-->
+        <div class="col">
+            <img src="~/css/IMG/AvatarCaminhoPoster.jpg" alt="Pôster de Avatar 2: O Caminho da Água(2022)" width="150" />
+            <h4>Avatar 2:<br />O Caminho da Água</h4>
+            <h5>De James Cameron</h5>
+        </div>
+
+        <!--Halloween Ends-->
+        <div class="col">
+            <img src="~/css/IMG/HalloweenEndsPoster.png" alt="Pôster de Halloween Ends(2022)" width="150" />
+            <h4>Halloween Ends</h4>
+            <h5>David Gordon Green</h5>
+        </div>
+
+        <!--Animais Fantásticos-->
+        <div class="col">
+            <img src="~/css/IMG/AnimaisFantasticosPoster.jpg" alt="Pôster de Animais Fantásticos: Os Segredos de Dumbledore(2022)" width="150" />
+            <h4>Animais Fantásticos:<br />Os Segredos de Dumbledore</h4>
+            <h5>David Yates</h5>
+        </div>
+    </div>
+</div>
+<hr />
+<br />
+
+<!--Botões de acesso para as próximas páginas-->
+
+<div class="textFilmS">
+    <input type="button" class="cadBut btn btn-secondary" value="1" />
+    <a asp-area="" asp-controller="Conteudo" asp-action="Filmes_2">
+        <input type="button" class="cadBut btn btn-secondary" value="2" />
+    </a>
+
+    <a asp-area="" asp-controller="Conteudo" asp-action="Filmes_2">
+        <input type="button" class="cadBut btn btn-secondary" value="Próxima -->" /> 
+    </a>
+
+</div>
+<br />

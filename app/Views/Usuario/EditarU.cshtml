@@ -1,0 +1,59 @@
+﻿@model UsuarioModel
+@{
+    ViewBag.Title = "Deletar Usuário";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+
+<!--COLUNA DE CADASTRO:-->
+            <form asp-controller="Usuario" asp-action="Cadastro" method="post">
+                <div>
+                    <h4 class="textFilmS">Edite seu perfil cadastrado:<br /></h4>
+
+                    <!--Caixa nome de usuário-->
+                    <div class="form-group">                            
+                                                        
+                            <input type="text" class="form-control" id="exampleInputEmail1" asp-for="UserName" aria-describedby="emailHelp" placeholder="Silva_10" maxlength="15" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.UserName)</p>
+                        </div>                   
+
+                        <!--Caixa nome-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Seu nome:</label>                            
+                            <input type="text" class="form-control" id="exampleInputEmail1" asp-for="Nome" aria-describedby="emailHelp" placeholder="Geraldo Silva Neto" maxlength="50" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.Nome)</p>
+                        </div>
+
+                        <!--Caixa data de nascimento-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sua Data de Nascimento:</label>                            
+                            <input type="date" class="form-control" id="exampleInputEmail1" asp-for="DataNasc" aria-describedby="emailHelp" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.DataNasc)</p>
+                        </div>
+
+                        <!--Caixa E-mail-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Seu endereço de email</label>                            
+                            <input type="email" class="form-control" id="exampleInputEmail1" asp-for="Email" aria-describedby="emailHelp" placeholder="emailgenerico@outlook.com" maxlength="55" required >
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.Email)</p>
+                        </div>
+
+                        <!--Caixa senha-->
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Sua Senha</label>                            
+                            <input type="password" class="form-control" asp-for="Senha" id="exampleInputPassword1" placeholder="admin1234" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.Senha)</p>
+                            <br />
+                        </div>
+
+                        <div class="textFilmS">
+                            <a asp-area="" asp-controller="Usuario" asp-action="Login">
+                                <input type="submit" class="btn btn-primary btn-block" value="Enviar">
+                                <br />
+                            </a>
+                            <div>
+                                <a class="cadBut btn btn-secondary btn-sm" asp-action="Perfil" asp-controller="Usuario" role="button">Voltar</a>
+                            </div>
+                        </div>                         
+                </div>
+            </form>
+            <br />

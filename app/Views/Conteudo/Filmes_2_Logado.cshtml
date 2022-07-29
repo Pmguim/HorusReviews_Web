@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Filmes";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+
+ <!--LINHA 1:-->
+<div class="container-fluid textFilmS">
+    <div class="row">
+
+        <div class="col">
+            <img src="~/css/IMG/MatrixPoster.png" alt="Pôster de Matrix: Ressurrections (2021)" width="150"/>
+            <h4>Matrix: Ressurrections</h4>
+            <h5>De Lana Wachowski</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/ultimatoPoster.png" alt="Pôster de Vingadores: Ultimato (2019)" width="150" />
+            <h4>Vingadores: Ultimato</h4>
+            <h5>De Irmãos Russo</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/interestellarPoster.jpg" alt="Pôster de Interestellar (2014)" width="150" />
+            <h4>Interestellar</h4>
+            <h5>De Christopher Nolan</h5>
+        </div>
+
+        <!--Thor: Amor e Trovão-->
+        <div class="col">
+            <img src="~/css/IMG/doctorStrange_Multiverse.png" alt="Pôster de Doutor Estranho no Multiverso da Loucura (2022)" width="150" />
+            <h4>Doutor Estranho no Multiverso da Loucura</h4>
+            <h5>De Sam Raimi</h5>
+        </div>       
+    </div>
+</div>
+
+<hr />
+<br />
+
+                <!--LINHA 2:-->
+<div class="container-fluid textFilmS">
+    <div class="row">
+
+        <!--Jurassic World: Domínio-->
+         <div class="col">
+            <img src="~/css/IMG/FinchPoster.png" alt="Pôster de Finch (2021)" width="150" />
+            <h4>Finch</h4>
+            <h5>De Miguel Sapochnik</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/EsquadraoSuicidaPoster.png" alt="Pôster de Esquadrão Suicida (2020)" width="150" />
+            <h4>Esquadrão<br />Suicida (2020)</h4>
+            <h5>De James Gunn</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/DetetivePikachuPoster.png" alt="Pôster de Detetive Pikachu (2019)" width="150" />
+            <h4>Detetive Pikachu</h4>
+            <h5>De Rob Letterman</h5>
+        </div>
+
+        <div class="col">
+            <img src="~/css/IMG/Coringa.png" alt="Pôster de Coringa (2019)" width="150" />
+            <h4>Coringa</h4>
+            <h5>De Todd Phillips</h5>
+        </div>        
+
+    </div>
+</div>
+
+<hr />
+<br />
+
+<div class="textFilmS">
+    <a asp-area="" asp-controller="Conteudo" asp-action="Filmes_1">
+        <input type="button" class="cadBut btn btn-secondary" value="1" /> 
+    </a>
+    <input type="button" class="cadBut btn btn-secondary" value="2" />
+    <input type="button" class="cadBut btn btn-secondary" value="Próxima -->" />
+</div>
+<br />
+
+

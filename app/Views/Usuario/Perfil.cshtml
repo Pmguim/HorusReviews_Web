@@ -1,0 +1,95 @@
+﻿@model List<UsuarioModel>
+@{
+    ViewBag.Title = "Perfil";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+
+<div class="container-fluid">
+            <style>
+                .icon {
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 50px;
+                }
+
+                .italic {
+                    text-align: right;
+                    font-size: 15px;
+                }
+            </style>
+
+            <div class="row margem">
+                <!--ÍCONE DE USUÁRIO:-->
+                <div class="col icon">
+                    <i class="far fa-user-circle fa-4x" style="width:100px"></i>
+
+                    @await Component.InvokeAsync("Menu_1")
+
+                    <!--LISTANDO USUÁRIOS CADASTRADOS NO BANCO:-->
+                    <!--(a)if (Model != null && Model.Any())
+                    {
+                        foreach (UsuarioModel usuario in Model)
+                        {
+
+                    
+                        }
+                    }
+                </div>-->
+                <div class="col">
+                    <p>  </p>
+                </div>
+
+                <div class="col">
+                    <p>  </p>
+                </div>
+
+                <div class="col center icon">
+                    <input type="button" class="bot" value="Seguir" />
+                </div>
+
+                <hr />
+                <div class="row menuUser">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Comentários</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>                    
+                    </ul>
+
+                </div>
+
+                <div class="margem"></div>
+
+                <p>Comentários destacados:</p>
+                <!--if (Model != null && Model.Any())
+                {
+                    foreach (UsuarioModel usuario in Model)
+                    {
+                        <div class="col">
+                        <h3>usuario.UserName</h3>
+                        <h3>comentario.DataPost</h3>
+                        </div>
+                        <h5>comentario.TextoComentario</h5>
+                        <h4>usuario.Email</h4>
+                        </div>
+                        
+                    }
+                }-->
+            <div>
+                <div class="col comentDest">
+                                
+                    <p>Achei meio daorinha.</p>
+                    <p class="italic"><i>Postado no dia 32/02/0001 em "Peppa Pig".</i></p>
+                </div>
+
+                <div class="marginBot"></div>
+            </div>
+        </div>
+
+    </div>
+</div>

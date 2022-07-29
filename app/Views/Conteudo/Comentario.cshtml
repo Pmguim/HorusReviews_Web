@@ -1,0 +1,62 @@
+﻿@model ComentarioModel
+@{
+    ViewBag.Title = "Login-Cadastro";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+
+
+<!--<div class="alert alert-success" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+</div>
+
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+    Um simples alerta danger. Olha só!
+</div>-->
+
+
+<div class="container-fluid">
+    <div class="row">
+        <h3>Adicionar um comentário público:</h3>
+        <br />
+            
+        <div class="col">            
+            <label for="exampleInputEmail1">Seu comentário/review será exibido na respectiva produção.</label>
+        </div>
+
+        <div class="col">                
+            <label for="exampleInputEmail1">Seu nome de usuário será exibido junto de seu comentário na produção.</label>
+        </div>
+    </div>
+</div>
+
+<form asp-controller="Conteudo" asp-action="Criar" method="post">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--Caixa de comentário: -->
+            <div class="col">
+                <input asp-for="TextoComentario" type="text" class="comentDest2" placeholder="Digite seu comentário aqui" maxlength="950" required />
+            </div>
+
+            <!--Caixa de nome de usuário:-->
+            <div class="col textFilmS1">                
+                <input asp-for="UserName" type="text" placeholder="Silva_10" maxlength="15" required/>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <!--Botão de enviar-->
+    <div class="textFilmS">
+        <a asp-area="" asp-controller="Conteudo" asp-action="DStrangeLogado">
+            <input type="submit" class="btn btn-primary btn-block" value="Enviar" />
+        </a>
+    </div>
+</form>
+
+    <div class="textFilmS">
+        <a asp-area="" asp-controller="Conteudo" asp-action="DStrangeLogado">
+            <input type="submit" class="btn btn-secondary btn-block" value="Voltar" />
+        </a>
+    </div>

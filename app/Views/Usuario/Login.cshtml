@@ -1,0 +1,53 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/SHARED/_Layout.cshtml";
+}
+
+<script>
+    $('.alert').alert()
+</script>
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert alert-primary" aria-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+            
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert alert-primary" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<form asp-controller="Usuario" asp-action="Entrar" method="post">
+                <div>
+                    <h4 class="textFilmS">Entre com seu e-mail e senha cadastrados: <br /></h4>                        
+                    <!--Caixa E-mail-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Seu endereço de email</label>                            
+                            <input type="email" class="form-control" id="exampleInputEmail1" asp-for="Email" aria-describedby="emailHelp" placeholder="emailgenerico@outlook.com" maxlength="55" required >
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.Email)</p>
+                        </div>
+
+                        <!--Caixa senha-->
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Sua Senha</label>                            
+                            <input type="password" class="form-control" asp-for="Senha" id="exampleInputPassword1" placeholder="admin1234" required>
+                            <p style="color: red">@Html.ValidationMessageFor(x => x.Senha)</p>
+                        </div>
+
+                        <div class="textFilmS">
+                            <a asp-area="" asp-controller="Usuario" asp-action="Login">
+                                <input type="submit" class="btn btn-primary btn-block" value="Acessar">
+                            </a>
+                            <div>
+                                <a class="btn btn-secondary btn-sm" asp-action="Index" asp-controller="Home" role="button">Voltar</a>
+                            </div>
+                        </div>
+                         
+                </div>
+            </form>

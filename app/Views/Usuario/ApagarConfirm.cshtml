@@ -1,0 +1,31 @@
+﻿@model UsuarioModel
+@{
+    ViewBag.Title = "Deletar Usuário";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+    <button type="button" class="btn btn-success btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+    @TempData["MensagemSucesso"]
+</div>    
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" style="position: absolute; right: -10px; top: -15px; border-radius: 15px; width: 30px; height: 31px;" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<h3>Realmente deseja deletar este usuário?</h3>
+<div>   
+    <a class="btn btn-danger btn-block" asp-controller="Usuario" asp-route-id="UserName" asp-action="Apagar" role="button">Sim, apague este usuário</a>
+
+    <a class="btn btn-primary btn-block" asp-controller="Usuario" asp-action="Perfil">Não, mantenha este usuário.</a>
+
+
+</div>

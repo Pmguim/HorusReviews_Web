@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] HorusReviews</title>
+    <!-- CSS DO BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- SCRIPT DO JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--JQUERY DATA TABLE-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
+    <!--CSS DO DATA TABLE-->
+    
+    <!--SCRIPT DO BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!--SCRIPT FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/1dcfa88280.js" crossorigin="anonymous"></script>
+    <!--SCRIPT DO GOOGLE FONTS-->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
+    <!--LINK DO ARQUIVO CSS: -->
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/HorusReviews_MVC_19_05_2022.styles.css" asp-append-version="true" />
+    
+
+</head>
+<body class="corpo">
+    <header>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"> 
+            <div class="container">
+                    <div class="textFilmS1 col">
+                        <!--Título do Site-->
+                        <p class="nav-link text-black" asp-area="" asp-controller="Cadastro" asp-action="Index">HorusReviews</p>
+                    </div>
+
+                        <!--<div class="navbar-collapse collapse d-sm-inline-flex justify-content-around"> -->
+                        <ul class="navbar-nav flex-grow-1">
+                            
+                               <li class="nav-item">
+                                <!--Link página filmes-->
+                                <a class="nav-link link" asp-area="" asp-controller="Conteudo" asp-action="Filmes_1">Filmes</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <!--Link página séries:-->
+                                <a class="nav-link link" asp-area="" asp-controller="Conteudo" asp-action="Series_1">Séries</a>
+                            </li>
+                            <li class="nav-item">
+                                <!--Link página Animes-->
+                                <a class="nav-link link" asp-area="" asp-controller="Conteudo" asp-action="Animes">Animes</a>
+                            </li>
+                            <li class="nav-item">
+                                <!--Ícone do site-->
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <i> <img src="~/css/IMG/OlhoGenerico.jpg" alt="Olho de Horus" width="50"/></i>                                                                     
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <!--Link página Todos-->
+                                <a class="nav-link link" asp-area="" asp-controller="Conteudo" asp-action="Todos">Todos</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <!--Link página Login-->
+                                <a class="nav-link link" asp-area="" asp-controller="Usuario" asp-action="Login">Login</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <!--Link página Cadastro-->
+                                <a class="nav-link link" asp-area="" asp-controller="Usuario" asp-action="Cadastro">Cadastro</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                <!--        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+
+        </nav>
+        
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted bg-light box-shadow mb-3">
+        <div class="container">
+            <div class="container-fluid rodape">
+                <div class="row">
+                    <div class="col">
+                        <p>2022 - HORUS REVIEWS©</p>
+                    </div>
+                    <div class="col">
+                        <i class="fab fa-facebook" style="font-size:40px; color:darkblue";></i>
+                        <i class="fab fa-twitter-square" style="font-size:40px; color: deepskyblue;"></i>
+                        <i class="fab fa-instagram-square" style="font-size:40px; color: deeppink";></i>
+                    </div>
+                    <div class="col">
+                        <i class="fab fa-google-play" style="font-size: 30px; color:green;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

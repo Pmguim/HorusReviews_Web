@@ -1,0 +1,14 @@
+﻿@model UsuarioModel
+
+<h3>@Model.UserName</h3>
+<h4>@Model.Email</h4>
+<h5>Entrou em: @Model.DataCad</h5>
+    <div>
+        <a role="button" class="btn btn-primary " asp-controller="Usuario" asp-route-username="@Model.UserName" asp-action="EditarU"> Editar perfil </a>
+        <!--<a role="button" class="btn btn-primary " asp-route-id="(a)Model.UserName" asp-controller="Usuario" asp-action="EditarU"> Editar perfil </a>-->
+    </div>
+
+    <div>
+        <a role="button" class="btn btn-danger" asp-route-username="@Model.UserName" asp-controller="Usuario" asp-action="ApagarConfirm"> Apagar Informações do perfil </a>
+        <!--<a role="button" class="btn btn-danger" asp-route-id="(a)Model.UserName" asp-controller="Usuario" asp-action="ApagarConfirm"> Apagar Informações do perfil </a>-->
+    </div>

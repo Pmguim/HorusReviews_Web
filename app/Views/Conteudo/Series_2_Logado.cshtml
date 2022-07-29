@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Séries";
+    Layout = "~/Views/SHARED/_LayoutLogado.cshtml";
+}
+                <!--LINHA 1-->
+<div class="container-fluid textFilmS">
+    <div class="row">
+
+        <!--Umbrella Academy-->
+        <div class="col">
+            <img src="~/css/IMG/UmbrellaAcademyPoster.png" alt="Pôster de The Umbrella Academy (2019)" width="150" />
+            <h4>Umbrella Academy</h4>
+            <h5>De Steve Blackman<br />e Jeremy Slater</h5>
+        </div>
+
+        <!--Rick And Morty-->
+        <div class="col">
+            <img src="~/css/IMG/RickMortyPoster.png" alt="Pôster de Rick And Morty (2013)" width="170" />
+            <h4>Rick And Morty</h4>
+            <h5>De Dan Harmon<br />e Justin Roiland</h5>
+        </div>
+
+        <!--Pacificador-->
+        <div class="col">
+            <img src="~/css/IMG/PacificadorPoster.png" alt="Pôster de Pacificador (2022)" width="150" />
+            <h4>Pacificador</h4>
+            <h5>De James Gunn</h5>
+        </div>
+
+        <!--Black Mirror-->
+        <div class="col">
+            <img src="~/css/IMG/BlackMirrorPoster.png" alt="Pôster de Black Mirror (2011)" width="150" />
+            <h4>Black Mirror</h4>
+            <h5>De Charlie Brooker</h5>
+        </div>
+    </div>
+</div>
+<hr />
+<br />
+
+       <!--LINHA 2-->
+<div class="container-fluid textFilmS">
+    <div class="row">
+
+        <!--The Witcher-->
+        <div class="col">
+            <img src="~/css/IMG/TheWitcherPoster.png" alt="Pôster de The Witcher (2019)" width="160" />
+            <h4>The Witcher</h4>
+            <h5>De Lauren Schmidt</h5>
+        </div>
+
+        <!--The Mandalorian-->
+        <div class="col">
+            <img src="~/css/IMG/Mandalorian.png" alt="Pôster de Mandalorian (2019)" width="160" />
+            <h4>Mandaloriano</h4>
+            <h5>De Jon Favreau</h5>
+        </div>
+
+        <!--Mestres do Universo-->
+        <div class="col">
+            <img src="~/css/IMG/He_Man_MestresDoUniverso.png" alt="Pôster de Mestres do Universo (2021)" width="170" />
+            <h4>Mestres do Universo</h4>
+            <h5>Adam Conarroe<br />e Patrick Stannard</h5>
+        </div>
+
+        <!--Arcane-->
+        <div class="col">
+            <img src="~/css/IMG/ArcanePoster.png" alt="Pôster de Arcane (2019)" width="160" />
+            <h4>Arcane</h4>
+            <h5>De Pascal Charrue<br />e Arnaud Delord </h5>
+        </div>
+    </div>
+</div>
+<hr />
+<br />
+
+
+<!--Botões de acesso para as próximas páginas-->
+
+<div class="textFilmS">
+    <a asp-area="" asp-controller="Conteudo" asp-action="Series_1">
+        <input type="button" class="cadBut btn btn-secondary" value="1" /> 
+    </a>
+    <input type="button" class="cadBut btn btn-secondary" value="2" />
+    <input type="button" class="cadBut btn btn-secondary" value="Próxima -->" />
+</div>
+<br />
+

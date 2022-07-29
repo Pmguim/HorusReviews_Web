@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] HorusReviews</title>
+    <!-- CSS DO BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- SCRIPT DO JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--JQUERY DATA TABLES-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
+    <!--SCRIPT DO BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!--SCRIPT FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!--<script src="https://kit.fontawesome.com/1dcfa88280.js"" crossorigin="anonymous"></script>-->
+    <!--SCRIPT DO GOOGLE FONTS-->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
+    <!--LINK DO ARQUIVO CSS: -->
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/HorusReviews_MVC_19_05_2022.styles.css" asp-append-version="true" />
+</head>
+<body class="corpo">
+    <header>
+        @await Component.InvokeAsync("Menu");
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted bg-light">
+        <div class="container">
+            <div class="container-fluid rodape">
+                <div class="row">
+                    <div class="col">
+                        <p>2022 - HORUS REVIEWS©</p>
+                    </div>
+                    <div class="col">
+                        <i class="fab fa-facebook" style="font-size:40px; color:darkblue";></i>
+                        <i class="fab fa-twitter-square" style="font-size:40px; color: deepskyblue;"></i>
+                        <i class="fab fa-instagram-square" style="font-size:40px; color: deeppink";></i>
+                    </div>
+                    <div class="col">
+                        <i class="fab fa-google-play" style="font-size: 30px; color:green;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

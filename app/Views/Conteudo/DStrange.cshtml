@@ -1,0 +1,104 @@
+﻿@model List<ComentarioModel>
+@{
+	ViewBag.Teste = "Doutor Estranho no Multiverso da Loucura";
+    ViewData["Title"] = "Conteudo";
+    Layout = "~/Views/SHARED/_Layout.cshtml";
+}
+
+
+<div>
+    <div class="textFilmS">
+        <h2></h2>
+        <h2>
+             @ViewBag.Teste
+             <!--Doutor Estranho no<br />Multiverso da Loucura-->
+         </h2>
+        <h5>de Sam Raimi</h5>
+        <br />
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col textFilmS">
+                <img src="~/css/IMG/doctorStrange_Multiverse.png" alt="Pôster Doutor Estranho no Multiverso da Loucura" width="200px" />
+            </div>
+           
+            <div class="col marginBot">
+                <h3>Sinopse</h3>
+                <h5>
+                    Em Doutor Estranho no Multiverso da Loucura, após derrotar Dormammu e enfrentar Thanos nos eventos de Vingadores: Ultimato, <br />
+                    o Mago Supremo, Stephen Strange (Benedict Cumberbatch), e seu parceiro Wong (Benedict Wong), continuam suas pesquisas sobre
+                    a Joia do Tempo. Mas um velho amigo que virou inimigo coloca um ponto final nos seus planos e faz com que Strange desencadeie
+                    um mal indescritível, o obrigando a enfrentar uma nova e poderosa ameaça.
+                </h5>
+            </div>
+            </div>                
+            <hr />
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <h3>Comentários: </h3>
+                    </div>
+
+                    <div class="col">
+                        <a asp-area="" asp-controller="Usuario" asp-action="Cadastro">
+                            <input class="cadBut btn btn-secondary" type="button" value="Adicionar um comentário público" />
+                       </a>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="margem">
+            </div>
+            <table class="table textFilmS" id="table-comentario">
+                <thead>
+                    <tr>
+                        <th scope="col">CodComent</th>
+                        <th scope="col">Usuário</th>
+                        <th scope="col">Comentário</th>
+                    </tr>
+                </thead>
+
+            <!--LISTANDO COMENTÁRIOS DO BANCO:-->            
+           @if (Model != null && Model.Any())
+                    {
+                        foreach (ComentarioModel comentario in Model)
+                        {
+                            <!--<div class="container-fluid">
+                                <div class="row">
+                                    <div>
+                                    <i class="fa-solid fa-user"></i>
+                                    <h4>(a)comentario.UserName</h4>
+                                    </div>
+
+                                    <div class="comentDest2">
+                                        <h5>(a)comentario.TextoComentario</h5>                                        
+                                    </div>
+                                    <p><i>Enviado no dia: (a)comentario.DataPost</i></p>
+                                </div>
+                                <a role="button" class="btn btn-primary" asp-route-id="(a)comentario.UserName" asp-controller="Conteudo" asp-action="EditarC">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="(a)comentario.UserName" asp-controller="Conteudo" asp-action="ApagarC">Apagar</a>
+                            </div>
+                            <hr />
+                            <br />-->
+                              <tbody class="textFilmS">
+                                <tr>
+                                  <td>@comentario.CodComent</td>
+                                  <td>@comentario.UserName</td>
+                                  <td>@comentario.TextoComentario</td>                                  
+                                </tr>
+                              </tbody>
+                            
+                        }
+                    }
+                    else {
+                        <tr class="odd"><td valign="top" colspan="5">Nenhum comentário encontrado.</td></tr>
+                    }
+            </table>
+
+            <div class="col"></div>
+
+        </div>
+        <br />
+</div>
+                                  

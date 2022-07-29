@@ -1,0 +1,71 @@
+﻿@model UsuarioModel
+
+        <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 bg-light textFilmS">-->
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"> 
+            <div class="container">
+                    <div class="textFilmS1 col">
+                        <!--Título do Site-->
+                        <p class="nav-link text-black" asp-area="" asp-controller="Cadastro" asp-action="IndexLogado">Olá, @Model.UserName</p>
+                    </div>
+
+                        <!--<div class="navbar-collapse collapse d-sm-inline-flex justify-content-around"> -->
+                        <ul class="navbar-nav flex-grow-1">
+                            
+                               <li class="nav-item">
+                                <!--Link página filmes-->
+                                <a class="nav-link link" asp-area="" asp-controller="Conteudo" asp-action="Filmes_1_Logado">Filmes</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <!--Link página séries:-->
+                                <a class="nav-link link" asp-area="" asp-controller="Conteudo" asp-action="Series_1_Logado">Séries</a>
+                            </li>
+                            <li class="nav-item">
+                                <!--Link página Animes-->
+                                <a class="nav-link link" asp-area="" asp-controller="Conteudo" asp-action="Animes_Logado">Animes</a>
+                            </li>
+                            <li class="nav-item">
+                                <!--Ícone do site-->
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="IndexLogado">
+                                    <i> <img src="~/css/IMG/OlhoGenerico.jpg" alt="Olho de Horus" width="50"/></i>                                                                     
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <!--Link do perfil-->
+                                <a class="nav-link link" asp-area="" asp-controller="Conteudo" asp-action="Todos_Logado">Todos</a>
+                            </li>
+                            <li class="nav-item">
+                                <!--Link do perfil-->
+                                <a class="nav-link link" asp-area="" asp-controller="Usuario" asp-action="Perfil">Perfil</a>
+                            </li>
+                            
+
+
+                            <li class="nav-item">
+                                <!--Sair/Deslogar do sistema-->
+                                <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Sair">Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                <!--        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+
+        </nav>
+
